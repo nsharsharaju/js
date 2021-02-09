@@ -3,7 +3,9 @@ let c = 1
 
 setTimeout(() => { a = false }, 10000)
 
-const id = setInterval(() => {
+const cb = () => {
     if (a) console.log(c++)
     else clearInterval(id)
-}, 1000)
+}
+
+const id = setInterval(cb, 1000)
